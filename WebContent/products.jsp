@@ -87,10 +87,12 @@
 				</table>
 			</div>
 		</div>
+		<c:if test="${sessionScope.role == 'ADMIN'}">
 		<button id="btnAdd" type="button" class="btn-primary rounded-circle"
 			role="button">
 			<span class="fa fa-plus" aria-hidden="true"></span>
 		</button>
+		</c:if>
 		<div id="cardEdit" class="card">
 			<div class="card-header">Edition d'un produit</div>
 			<form method="post">
