@@ -1,0 +1,11 @@
+.container, #cardEdit {
+	margin-top : 20px;
+}
+
+#btnAdd {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	border: 40px;
+	padding: 20px;
+}
