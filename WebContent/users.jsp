@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,12 +10,12 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<header class="navbar navbar-expand-lg navbar-dark bg-primary">
 		<a class="navbar-brand mr-0 mr-md-2" href="/" aria-label="Bootstrap">
-			<svg
-				class="d-block" width="36" height="36" viewBox="0 0 612 612"
+			<svg class="d-block" width="36" height="36" viewBox="0 0 612 612"
 				xmlns="http://www.w3.org/2000/svg" focusable="false">
 			<title>Bootstrap</title>
 			<path fill="currentColor"
@@ -28,15 +29,24 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarColor02">
+			<span style="color: white;">Bonjour ${sessionScope.login} - </span>
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active"><a class="nav-link"
-					href="index?action=products">Produits</a></li>
 				<li class="nav-item"><a class="nav-link"
+					href="index?action=products">Produits</a></li>
+				<li class="nav-item active"><a class="nav-link"
 					href="index?action=users">Utilisateurs</a></li>
+				<li></li>
 			</ul>
-			<form class="form-inline">
-				<a href="login?action=login"><button
-						class="btn btn-outline-light my-2 my-sm-0" type="submit">Déconnexion</button></a>
+			Vous êtes connecté en tant que
+			<c:if test="${sessionScope.role == 'ADMIN'}">
+			ADMIN
+			</c:if>
+			<c:if test="${sessionScope.role == 'USER'}">
+			USER
+			</c:if>
+			<form class="form-inline" style="margin-left: 20px;">
+				<a href="login?action=logout"><button
+						class="btn btn-outline-light my-2 my-sm-0" type="button">Déconnexion</button></a>
 			</form>
 		</div>
 	</header>

@@ -67,6 +67,7 @@ public class ProductsController extends HttpServlet {
 			response.sendRedirect("products");
 		}
 		if (request.getParameter("editProduct") != null) {
+			System.out.println("Identifiant" + request.getParameter("identifiant"));
 			Produit p = Application.getInstance().getProduitDao()
 					.find(Long.parseLong(request.getParameter("identifiant")));
 			p.setNom(request.getParameter("nom"));

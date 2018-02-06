@@ -29,6 +29,8 @@ $(document).ready(function() {
 	$("#cardEdit .card-header").text("Edition de "+nom+" "+prenom);
     
     $("#cardEdit").show();
+    $("#test").hide();
+    $("form .form-group:first-child").show();
     $("#btnValidate").toggle();
     $("#btnEdit").toggle();
   }
@@ -43,6 +45,7 @@ $(document).ready(function() {
 	$("#cardEdit .card-header").text("Ajout d'un nouveau produit");
     $("#btnEdit").hide();
     $("#btnValidate").show();
+    $("form .form-group:first-child").hide();
   });
 
   $("#btnEdit").bind("click", function() {

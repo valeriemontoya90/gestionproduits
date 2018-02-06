@@ -69,7 +69,6 @@ public class LoginController extends HttpServlet {
 			request.getSession().setAttribute("login", log.getLogin());
 			request.getSession().setAttribute("password", log.getMotDePasse());
 			request.getSession().setAttribute("role", log.getRole());
-			System.out.println("ROLEEEEEEEEE == "+request.getSession().getAttribute("role"));
 			response.sendRedirect("index?action=products");
 		} else {
 			request.setAttribute("error", "Identifiants incorrects");
